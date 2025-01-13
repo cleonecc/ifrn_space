@@ -1,0 +1,438 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo geral */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+    padding-top: 80px;
+}
+
+h1 {
+    text-align: center; 
+    color: #ffffff;  
+    background-color: #219D01;  
+    padding: 20px;  
+    font-size: 2.5rem;  
+    border-radius: 10px;  
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);  
+    margin-top: 20px;  
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);  
+    letter-spacing: 2px;
+}
+
+a {
+    color: #004d40;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Contêiner */
+.container {
+    max-width: 1330px; 
+    margin: 0 auto; 
+    padding: 0 15px; 
+}
+
+/* Navbar */
+.navbar {
+    background-color: #343a40;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    color: #ffd700;
+    font-weight: bold;
+}
+
+.navbar-toggler-icon {
+    background-color: #2F2F2F;
+}
+
+.navbar-nav .nav-link {
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 10px 15px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffd700;
+    background-color: rgba(255, 215, 0, 0.1);
+    border-radius: 5px;
+}
+
+/* Estilo dos parceiros */
+/* Estilo dos parceiros */
+.partners-section {
+    padding: 60px 0;
+    background-color: #f1f1f1;
+}
+
+.partner-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px; /* Bordas mais arredondadas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra mais suave */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave de sombra e movimento */
+    height: 100%;
+    margin: 10px; /* Espaçamento entre os cards */
+}
+
+.partner-card:hover {
+    transform: translateY(-10px);
+}
+
+.partner-card h4 {
+    font-size: 1.5rem;
+    color: #343a40;
+    margin-bottom: 15px;
+}
+
+.partner-card p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: auto;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .navbar-nav .nav-link {
+        font-size: 1rem;
+    }
+
+    .partner-card {
+        padding: 20px;
+    }
+
+    .partner-card h4 {
+        font-size: 1.2rem;
+    }
+
+    .partner-card p {
+        font-size: 0.9rem;
+    }
+
+    .form-container {
+        padding: 20px;
+    }
+
+    .form-container h2 {
+        font-size: 22px;
+    }
+}
+
+/* Rodapé */
+footer {
+    background-color: #343a40;
+    color: #fff;
+    padding: 40px 0;
+}
+
+footer h3 {
+    color: #ffd700;
+    font-weight: bold;
+}
+
+.social-links {
+    margin-top: 15px;
+}
+
+.social-icon {
+    font-size: 2rem;
+    color: #ffd700;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #e6b800;
+}
+
+/* Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+table th {
+    background-color: #219D01;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Ícones */
+.fas {
+    margin-right: 10px;
+}
+
+/* Links de alternância */
+.view-options {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.view-link {
+    font-size: 18px;
+    text-decoration: none;
+    color: #007BFF;
+    margin: 0 15px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.view-link:hover {
+    background-color: #007BFF;
+    color: white;
+}
+
+.view-link i {
+    margin-right: 8px;
+}
+
+/* Formulários */
+.form-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 26px;
+}
+
+.form-container input, .form-container select, .form-container textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-container input:focus, .form-container textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 15px;
+    background-color: #219D01;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-container button:hover {
+    background-color: #01C929;
+}
+
+/* Sucesso */
+.success-message {
+    color: green;
+    font-size: 16px;
+    margin-top: 15px;
+    display: none;
+}
+
+.r{
+    margin-top: -10px;
+}
+
+/* Estilo da mensagem de boas-vindas */
+        .welcome-message {
+            background-color: #ffd700;
+            color: #333;
+            padding: 40px;
+            text-align: center;
+            border-radius: 8px;
+            margin: 20px auto;
+            max-width: 900px;
+        }
+
+        .welcome-message h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .welcome-message p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .welcome-message strong {
+            color: #343a40;
+        }
+
+
+
+/* Barra de pesquisa */
+.search-bar input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar input:focus {
+    background-color: #f8f9fa;
+    border-color: #219D01;
+}
+
+/* Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+table thead {
+    background-color: black;  /* Cor de fundo do cabeçalho */
+    color: white;               /* Cor do texto do cabeçalho */
+}
+
+table thead th {
+    text-align: center;         /* Centraliza o texto dentro das células do cabeçalho */
+    padding: 12px;              /* Espaçamento interno nas células do cabeçalho */
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 12px 20px;
+    text-align: left;
+    vertical-align: middle;
+    font-size: 16px;
+}
+
+
+table th {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+table td {
+    color: #333;
+}
+
+table td.align-left {
+    text-align: left;
+}
+
+table td.status {
+    font-weight: bold;
+    color: #219D01;
+}
+
+table td.status.EmAndamento {
+    color: #ff8c00;
+}
+
+table td.status.Concluído {
+    color: #28a745;
+}
+
+table td.status.Pendente {
+    color: #dc3545;
+}
+
+table td a {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s;
+}
+
+table td a:hover {
+    color: #0056b3;
+}
+
+/* Centralização das colunas */
+table th, table td {
+    text-align: center;  /* Centraliza todo o conteúdo da tabela */
+}
+
+table td.align-left {
+    text-align: left;  /* Alinha à esquerda as células que contêm textos longos, como 'Ação planejada/executada' */
+}
+
+table td.status, table td.perido, table td.setor {
+    text-align: center;  /* Centraliza as colunas 'Setor responsável', 'Período' e 'Status' */
+}
+
+
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .search-bar input {
+        font-size: 14px;
+    }
+
+    table th, table td {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+}

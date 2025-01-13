@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IFRN Apodi</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">SUGAP</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gestores.html">GESTORES</a></li>
+                    <li class="nav-item"><a class="nav-link" href="reunioes.html">REUNIÕES</a></li>
+                    <li class="nav-item"><a class="nav-link" href="planejamento.html">PLANEJAMENTO</a></li>
+                    <li class="nav-item"><a class="nav-link" href="transparencia.html">TRANSPARÊNCIA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="parceiros.html">PARCEIROS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contato.html">CONTATO</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+        <h1>Equipe de Gestão</h1>
+        <!-- Links para Alternar Visualização -->
+        <div class="view-options search-container">
+             
+            <a href="#table-view" class="view-link"><i class="fas fa-table"></i> Tabela</a>
+            <span>|</span>
+            <a href="#visual-view" class="view-link"><i class="fas fa-eye"></i> Card</a>
+            
+            <input type="text" class="search-input " id="searchInput" placeholder="Pesquise por nome ou setor..." onkeyup="filterViews()">
+            
+        </div>
+
+        <!-- Tabela de Gestão -->
+        <section id="table-view">
+            <div class="container">
+                <table border="1">
+                <thead>
+                    <tr>
+                        <th>Nome do servidor(a) </th>
+                        <th>Setor SUAP</th>
+                        <th>E-mail do Setor</th>
+                        <th>Telefone do Setor</th>
+                        <th>Substituto(a) Eventual</th> <!-- Nova coluna -->
+                    </tr>
+                </thead>
+                <tbody>
+                <tr class="search-item" data-name="Cleone Silva de Lima" data-sector="DG/AP">
+                    <td>Cleone Silva de Lima</td>
+                    <td>DG/AP</td>
+                    <td><a href="mailto:dg.ap@ifrn.edu.br">dg.ap@ifrn.edu.br</a></td>
+                    <td><a href="tel:+5584">(84) 4005-4101 (ramal: 6400) </a></td>
+                    <td>Sabrina Guedes Miranda Dantas</td> <!-- Nova célula -->
+                </tr>
+                <tr class="search-item" data-name="Leonardo Dantas dos Santos" data-sector="DIAC/AP">
+                    <td>Leonardo Dantas dos Santos</td>
+                    <td>DIAC/AP</td>
+                    <td><a href="mailto:diac.ap@ifrn.edu.br">diac.ap@ifrn.edu.br</a></td>
+                    <td><a href="tel:+5584">(84) 4005-4101 (ramal: 6430)</a></td>
+                    <td>Luciana Medeiros Bertini</td> <!-- Nova célula -->
+                </tr>
+                <tr class="search-item" data-name="Mayara Magna Barra Costa" data-sector="DIAD/AP">
+                    <td>Mayara Magna Barra Costa</td>
+                    <td>DIAD/AP</td>
+                    <td><a href="mailto:diad.ap@ifrn.edu.br">diad.ap@ifrn.edu.br</a></td>
+                    <td><a href="tel:+5584">(84) 4005-4101 (ramal: 6405)</a></td>
+                    <td>[Nome do Substituto]</td> <!-- Nova célula -->
+                </tr>
+                <tr class="search-item" data-name="Welliton Barros de Magalhães" data-sector="DIGUAE/AP">
+                    <td>Welliton Barros de Magalhães</td>
+                    <td>DIGUAE/AP</td>
+                    <td><a href="mailto:diguae.ap@ifrn.edu.br">diguae.ap@ifrn.edu.br</a></td>
+                    <td><a href="tel:+5584">(84) 4005-4101 (ramal: 6408)</a></td>
+                    <td>[Nome do Substituto]</td> <!-- Nova célula -->
+                </tr>
+                <tr class="search-item" data-name="Sabrina Guedes Miranda Dantas" data-sector="COEX/AP">
+                    <td>Sabrina Guedes Miranda Dantas</td>
+                    <td>COEX/AP</td>
+                    <td><a href="mailto:coex.ap@ifrn.edu.br">coex.ap@ifrn.edu.br</a></td>
+                    <td><a href="tel:+5584">(84) 4005-4101 (ramal: 6407)</a></td>
+                    <td>Jackson da Cruz Costa</td> <!-- Nova célula -->
+                </tr>
+                <tr class="search-item" data-name="Tássio Lessa do Nascimento" data-sector="COPEIN/AP">
+                    <td>Tássio Lessa do Nascimento</td>
+                    <td>COPEIN/AP</td>
+                    <td><a href="mailto:copein.ap@ifrn.edu.br">copein.ap@ifrn.edu.br</a></td>
+                    <td><a href="tel:+5584">(84) 4005-4101 (ramal: 6436)</a></td>
+                    <td>[Nome do Substituto]</td> <!-- Nova célula -->
+                </tr>
+                <tr class="search-item" data-name="Antonia Elainne Sousa Marinho" data-sector="GABIN/AP">
+                    <td>Antonia Elainne Sousa Marinho</td>
+                    <td>GABIN/AP</td>
+                    <td><a href="mailto:gabin.ap@ifrn.edu.br">gabin.ap@ifrn.edu.br</a></td>
+                    <td><a href="tel:+5584">(84) 4005-4101 (ramal: 6401)</a></td>
+                    <td>[Nome do Substituto]</td> <!-- Nova célula -->
+                </tr>
+                <tr class="search-item" data-name="Cristiano Morais da Silva" data-sector="SEAC/AP">
+                    <td>Cristiano Morais da Silva</td>
+                    <td>SEAC/AP</td>
+                    <td><a href="mailto:seac.ap@ifrn.edu.br">seac.ap@ifrn.edu.br</a></td>
+                    <td><a href="tel:+5584">(84) 4005-4101 (ramal: 6410)</a></td>
+                    <td> Francisco Edjarlilson de Morais</td> <!-- Nova célula -->
+                </tr>
+                <tr class="search-item" data-name="Rilza Souza de Gois Costa" data-sector="COAES/AP">
+                    <td>Rilza Souza de Gois Costa</td>
+                    <td>COAES/AP</td>
+                    <td><a href="mailto:coaes.ap@ifrn.edu.br">coaes.ap@ifrn.edu.br</a></td>
+                    <td><a href="tel:+5584">(84) 4005-4101 (ramal: 6415)</a></td>
+                    <td> Janekeyla Gomes de Sousa</td> <!-- Nova célula -->
+                </tr>
+                <tr class="search-item" data-name="Samuel Fernandes Dantas de Souza" data-sector="COFINC/AP">
+                    <td>Samuel Fernandes Dantas de Souza</td>
+                    <td>COFINC/AP</td>
+                    <td><a href="mailto:xxx.ap@ifrn.edu.br">xxx.ap@ifrn.edu.br</a></td>
+                    <td><a href="tel:+5584">(84) 4005-4101 (ramal: 6424)</a></td>
+                    <td>[Nome do Substituto]</td> <!-- Nova célula -->
+                </tr>
+                <tr class="search-item" data-name="Luis Benjamim de Moura Junior" data-sector="COAPAC/AP">
+                    <td>Luis Benjamim de Moura Junior</td>
+                    <td>COAPAC/AP</td>
+                    <td><a href="mailto:coapac.ap@ifrn.edu.br">coapac.ap@ifrn.edu.br</a></td>
+                    <td><a href="tel:+5584">(84) 4005-4101 (ramal: 6409)</a></td>
+                    <td>[Nome do Substituto]</td> <!-- Nova célula -->
+                </tr>
+                <tr class="search-item" data-name="Thiago Fernando de Araujo Silva" data-sector="COGPE/AP">
+                    <td>Thiago Fernando de Araujo Silva</td>
+                    <td>COGPE/AP</td>
+                    <td><a href="mailto:cogpe.ap@ifrn.edu.br">cogpe.ap@ifrn.edu.br</a></td>
+                    <td><a href="tel:+5584">(84) 4005-4101 (ramal: 6441)</a></td>
+                    <td>Eliude Emmanuelle Pinheiro de Franca T. </td> <!-- Nova célula -->
+                </tr>
+                <tr class="search-item" data-name="Rozendilson Lucena Oliveira" data-sector="COSGEM/AP">
+                    <td>Rozendilson Lucena Oliveira</td>
+                    <td>COSGEM/AP</td>
+                    <td><a href="mailto:cosgem.ap@ifrn.edu.br">cosgem.ap@ifrn.edu.br</a></td>
+                    <td><a href="tel:+5584">(84) 4005-4101 (ramal: 6413)</a></td>
+                    <td> Tereza Catrina Ferreira Fernandes Camara</td> <!-- Nova célula -->
+                </tr>
+                <tr class="search-item" data-name="Julio Cesar da Silva Medeiros" data-sector="COMPAT/AP">
+            <td>Julio Cesar da Silva Medeiros</td>
+            <td>COMPAT/AP</td>
+            <td><a href="mailto:compat.ap@ifrn.edu.br">compat.ap@ifrn.edu.br</a></td>
+            <td><a href="tel:+5584991519157">(84) 99151-9157</a></td>
+            <td>[Nome do substituto(a)]</td> <!-- Nome do Supervisor -->
+        </tr>
+
+        <!-- Coordenadora de Comunicação Social e Eventos -->
+        <tr class="search-item" data-name="Annapaullinna da Silva Costa Lima" data-sector="COCSEV/AP">
+            <td>Annapaullinna da Silva Costa Lima</td>
+            <td>COCSEV/AP</td>
+            <td><a href="mailto:cocsev.ap@ifrn.edu.br">cocsev.ap@ifrn.edu.br</a></td>
+            <td><a href="tel:+5584991037369">(84) 99103-7369</a></td>
+            <td>Francisco Edson Rodrigues Pinto</td> <!-- Nome do Supervisor -->
+        </tr>
+
+        <!-- Coordenador de Tecnologia da Informação -->
+        <tr class="search-item" data-name="Girleidson de Albuquerque Rodrigues" data-sector="CTI/AP">
+            <td>Girleidson de Albuquerque Rodrigues</td>
+            <td>CTI/AP</td>
+            <td><a href="mailto:cti.ap@ifrn.edu.br">cti.ap@ifrn.edu.br</a></td>
+            <td><a href="tel:+5584991540327">(84) 99154-0327</a></td>
+            <td>[Nome do substituto(a)]</td> <!-- Nome do Supervisor -->
+        </tr>
+
+        <!-- Coordenador de Laboratórios -->
+        <tr class="search-item" data-name="Wicliton Wagner de Oliveira Lima" data-sector="COLAB/AP">
+            <td>Wicliton Wagner de Oliveira Lima</td>
+            <td>COLAB/AP</td>
+            <td><a href="mailto:colab.ap@ifrn.edu.br">colab.ap@ifrn.edu.br</a></td>
+            <td><a href="tel:+558496627273">(84) 99662-7273</a></td>
+            <td>[Nome do substituto(a)]</td> <!-- Nome do Supervisor -->
+        </tr>
+
+        <!-- Coordenador Técnico do Laboratório de Física -->
+        <tr class="search-item" data-name="Francisco de Assis Sousa" data-sector="COTELABFIS/AP">
+            <td>Francisco de Assis Sousa</td>
+            <td>COTELABFIS/AP</td>
+            <td><a href="mailto:colab.ap@ifrn.edu.br">colab.ap@ifrn.edu.br</a></td>
+            <td><a href="tel:+5584996627273">(84) 99662-7273</a></td>
+            <td>-----</td> <!-- Nome do Supervisor -->
+        </tr>
+
+        <!-- Coordenadora de Esportes -->
+        <tr class="search-item" data-name="Jane Mery Nunes da Costa Lima" data-sector="COESP/AP">
+            <td>Jane Mery Nunes da Costa Lima</td>
+            <td>COESP/AP</td>
+            <td><a href="mailto:xxx@ifrn.edu.br">xxx@ifrn.edu.br</a></td>
+            <td><a href="tel:+5584996627273">(84) 99662-7273</a></td>
+            <td>[Nome do substituto(a)]</td> <!-- Nome do Supervisor -->
+        </tr>
+        <tr class="search-item" data-name="Luiza Helena Praxedes Fernandes" data-sector="ASERI/AP">
+    <td>Luiza Helena Praxedes Fernandes</td>
+    <td>ASERI/AP</td>
+    <td><a href="mailto:xxx.ap@ifrn.edu.br">xxx.ap@ifrn.edu.br</a></td>
+    <td><a href="tel:+5584991178855">(84) 99117-8855</a></td>
+    <td>[Nome do substituto(a)]</td>
+</tr>
+
+<tr class="search-item" data-name="Isabelle Brandão Mamede Galvão" data-sector="ASBIB/AP">
+    <td>Isabelle Brandão Mamede Galvão</td>
+    <td>ASBIB/AP</td>
+    <td><a href="mailto:asbib.ap@ifrn.edu.br">asbib.ap@ifrn.edu.br</a></td>
+    <td><a href="tel:+5584999116709">(84) 99911-6709</a></td>
+    <td>[Nome do substituto(a)]</td>
+</tr>
+
+<tr class="search-item" data-name="Aline Patricia da Silva" data-sector="NEABI/AP">
+    <td>Aline Patricia da Silva</td>
+    <td>NEABI/AP</td>
+    <td><a href="mailto:neabi.ap@ifrn.edu.br">neabi.ap@ifrn.edu.br</a></td>
+    <td><a href="tel:+5584991317037">(84) 99131-7037</a></td>
+    <td>[Nome do substituto(a)]</td>
+</tr>
+
+<tr class="search-item" data-name="Jaylton Edney Maia de Sousa" data-sector="NAPNE/AP">
+    <td>Jaylton Edney Maia de Sousa</td>
+    <td>NAPNE/AP</td>
+    <td><a href="mailto:napne.ap@ifrn.edu.br">napne.ap@ifrn.edu.br</a></td>
+    <td><a href="tel:+5584981427010">(84) 98142-7010</a></td>
+    <td>[Nome do substituto(a)]</td>
+</tr>
+
+<tr class="search-item" data-name="Danielle Lobo Montenegro" data-sector="CECINAM/AP">
+    <td>Danielle Lobo Montenegro</td>
+    <td>CECINAM/AP</td>
+    <td><a href="mailto:cecinam.ap@ifrn.edu.br">cecinam.ap@ifrn.edu.br</a></td>
+    <td><a href="tel:+5584991479035">(84) 99147-9035</a></td>
+    <td>-----</td>
+</tr>
+
+<tr class="search-item" data-name="Renato da Cunha Gomes" data-sector="COAGRO/AP">
+    <td>Renato da Cunha Gomes</td>
+    <td>COAGRO/AP</td>
+    <td><a href="mailto:xxx@ifrn.edu.br">xxx@ifrn.edu.br</a></td>
+    <td><a href="tel:+5584997063575">(84) 99706-3575</a></td>
+    <td>-----</td>
+</tr>
+
+<tr class="search-item" data-name="Samuel de Paiva Rego" data-sector="COINFO/AP">
+    <td>Samuel de Paiva Rego</td>
+    <td>COINFO/AP</td>
+    <td><a href="mailto:xxx@ifrn.edu.br">xxx@ifrn.edu.br</a></td>
+    <td><a href="tel:+5584999299894">(84) 99929-9894</a></td>
+    <td>-----</td>
+</tr>
+
+<tr class="search-item" data-name="Francisco Alexis Dantas Maia" data-sector="COTEQ/AP">
+    <td>Francisco Alexis Dantas Maia</td>
+    <td>COTEQ/AP</td>
+    <td><a href="mailto:xxx@ifrn.edu.br">xxx@ifrn.edu.br</a></td>
+    <td><a href="tel:+5584991019429">(84) 99101-9429</a></td>
+    <td>-----</td>
+</tr>
+
+<tr class="search-item" data-name="Jackson da Cruz Costa" data-sector="CTMSI/AP">
+    <td>Jackson da Cruz Costa</td>
+    <td>CTMSI/AP</td>
+    <td><a href="mailto:xxx@ifrn.edu.br">xxx@ifrn.edu.br</a></td>
+    <td><a href="tel:+5584991037369">(84) 98809-3869</a></td>
+    <td>-----</td>
+</tr>
+
+<tr class="search-item" data-name="Márcio Cleivo de Morais Souza" data-sector="COLIQ/AP">
+    <td>Márcio Cleivo de Morais Souza</td>
+    <td>COLIQ/AP</td>
+    <td><a href="mailto:xxx@ifrn.edu.br">xxx@ifrn.edu.br</a></td>
+    <td><a href="tel:+5584991037369">(84) 99103-7369</a></td>
+    <td>-----</td>
+</tr>
+
+<tr class="search-item" data-name="Samuel Fernandes Dantas de Souza" data-sector="COFINC/AP">
+    <td>Samuel Fernandes Dantas de Souza</td>
+    <td>xxx</td>
+    <td><a href="mailto:xxx@ifrn.edu.br">xxx@ifrn.edu.br</a></td>
+    <td><a href="tel:+558496147575">(84) 99614-7575</a></td>
+    <td>-----</td>
+</tr>
+
+<tr class="search-item" data-name="José Eric da Silva Queiroz" data-sector="xxx">
+    <td>José Eric da Silva Queiroz</td>
+    <td>xxx</td>
+    <td><a href="mailto:xxx.ap@ifrn.edu.br">xxx.ap@ifrn.edu.br</a></td>
+    <td><a href="tel:+5584996292229">(84) 99629-2229</a></td>
+    <td>-----</td>
+</tr>
+
+            </tbody>
+        </table>
+    </div>
+
+        </section>
+
+        <!-- Visualização com Fotos e Contatos -->
+        <section id="visual-view" style="display:none;">
+           <div class="container">  
+          
+            <main>
+                <!-- Diretor Geral -->
+                <section class="team-member search-item" data-name="Cleone Silva de Lima" data-sector="DG/AP">
+                    <h2>Diretor Geral</h2>
+                    <img src="img/cleone.jpeg" alt="Cleone Silva de Lima" class="team-photo">
+                    <p><strong>Nome:</strong> Cleone Silva de Lima</p>
+                    <p><strong>Setor SUAP:</strong> DG/AP</p>
+                    <p><strong>E-mail do Setor:</strong> <a href="mailto:dg.ap@ifrn.edu.br"><i class="fas fa-envelope"></i> dg.ap@ifrn.edu.br</a></p>
+                    <p><strong>E-mail Pessoal:</strong> <a href="mailto:cleone.lima@ifrn.edu.br"><i class="fas fa-envelope"></i> cleone.lima@ifrn.edu.br</a></p>
+                    <p><strong>Telefone:</strong> <a href="tel:+5584999927943"><i class="fas fa-phone-alt   "></i> (84) 99992-7943</a></p>
+                    <p><strong>WhatsApp:</strong> <a href="https://wa.me/5584999927943"><i class="fab fa-whatsapp"></i> (84) 99992.7943</a></p>
+                </section>
+
+                <!-- Diretor Acadêmico -->
+                <section class="team-member search-item" data-name="Leonardo Dantas dos Santos" data-sector="DIAC/AP">
+                    <h2>Diretor Acadêmico</h2>
+                    <img src="img/leonardo.jpg" alt="Leonardo Dantas dos Santos" class="team-photo">
+                    <p><strong>Nome:</strong> Leonardo Dantas dos Santos</p>
+                    <p><strong>Setor SUAP:</strong> DIAC/AP</p>
+                    <p><strong>E-mail do Setor:</strong> <a href="mailto:diac.ap@ifrn.edu.br"><i class="fas fa-envelope"></i> diac.ap@ifrn.edu.br</a></p>
+                    <p><strong>E-mail Pessoal:</strong> <a href="mailto:leonardo.dantas@ifrn.edu.br"><i class="fas fa-envelope"></i> leonardo.dantas@ifrn.edu.br</a></p>
+                    <p><strong>Telefone:</strong> <a href="tel:+55845584988648682"><i class="fas fa-phone-alt"></i> (84) 98864-8682</a></p>
+                    <p><strong>WhatsApp:</strong> <a href="https://wa.me/5584988648682"><i class="fab fa-whatsapp"></i> (84) 98864-8682</a></p>
+                </section>
+
+                <!-- Diretora de Administração -->
+                <section class="team-member search-item" data-name="Mayara Magna Barra Costa" data-sector="DIAD/AP">
+                    <h2>Diretora de Administração</h2>
+                    <img src="img/mayara.jpg" alt="Mayara Magna Barra Costa" class="team-photo">
+                    <p><strong>Nome:</strong> Mayara Magna Barra Costa</p>
+                    <p><strong>Setor SUAP:</strong> DIAD/AP</p>
+                    <p><strong>E-mail do Setor:</strong> <a href="mailto:diad.ap@ifrn.edu.br"><i class="fas fa-envelope"></i> diad.ap@ifrn.edu.br</a></p>
+                    <p><strong>E-mail Pessoal:</strong> <a href="mailto:mayara.costa@ifrn.edu.br"><i class="fas fa-envelope"></i> mayara.costa@ifrn.edu.br</a></p>
+                    <p><strong>Telefone:</strong> <a href="tel:+558499951-8797"><i class="fas fa-phone-alt"></i> (84) 99951-8797</a></p>
+                    <p><strong>WhatsApp:</strong> <a href="https://wa.me/558499951-8797"><i class="fab fa-whatsapp"></i> (84) 99951-8797</a></p>
+                </section>
+
+                <!-- Diretor da Unidade Agrícola-Escola -->
+                <section class="team-member search-item" data-name="Welliton Barros de Magalhaes" data-sector="DIGUAE/AP">
+                    <h2>Diretor da Unidade Agrícola-Escola</h2>
+                    <img src="img/welliton.jpg" alt="Welliton Barros de Magalhaes" class="team-photo">
+                    <p><strong>Nome:</strong> Welliton Barros de Magalhaes</p>
+                    <p><strong>Setor SUAP:</strong> DIGUAE/AP</p>
+                    <p><strong>E-mail do Setor:</strong> <a href="mailto:diguae.ap@ifrn.edu.br"><i class="fas fa-envelope"></i> diguae.ap@ifrn.edu.br</a></p>
+                    <p><strong>E-mail Pessoal:</strong> <a href="mailto:welliton.barros@ifrn.edu.br"><i class="fas fa-envelope"></i> welliton.barros@ifrn.edu.br</a></p>
+                    <p><strong>Telefone:</strong> <a href="tel:+5584XXXXXXXXX"><i class="fas fa-phone-alt"></i> (84) 9XXXX-XXXX</a></p>
+                    <p><strong>WhatsApp:</strong> <a href="https://wa.me/55849XXXXXXXX"><i class="fab fa-whatsapp"></i> (84) 9XXXX-XXXX</a></p>
+                </section>
+
+                <!-- Coordenadora de Extensão -->
+                <section class="team-member search-item" data-name="Sabrina Guedes Miranda Dantas" data-sector="COEX/AP">
+                    <h2>Coordenadora de Extensão</h2>
+                    <img src="img/sabrina.jpg" alt="Sabrina Guedes Miranda Dantas" class="team-photo">
+                    <p><strong>Nome:</strong> Sabrina Guedes Miranda Dantas</p>
+                    <p><strong>Setor SUAP:</strong> COEX/AP</p>
+                    <p><strong>E-mail do Setor:</strong> <a href="mailto:coex.ap@ifrn.edu.br"><i class="fas fa-envelope"></i> coex.ap@ifrn.edu.br</a></p>
+                    <p><strong>E-mail Pessoal:</strong> <a href="mailto:sabrina.guedes@ifrn.edu.br"><i class="fas fa-envelope"></i> sabrina.guedes@ifrn.edu.br</a></p>
+                    <p><strong>Telefone:</strong> <a href="tel:+55849818-2713"><i class="fas fa-phone-alt"></i> (84) 99818-2713</a></p>
+                    <p><strong>WhatsApp:</strong> <a href="https://wa.me/558499818-2713"><i class="fab fa-whatsapp"></i> (84) 99818-2713</a></p>
+                </section>
+
+                <!-- Coordenador de Pesquisa e Inovação -->
+                <section class="team-member search-item" data-name="Tássio Lessa do Nascimento" data-sector="COPEIN/AP">
+                    <h2>Coordenador de Pesquisa e Inovação</h2>
+                    <img src="img/tassio.jpg" alt="Tássio Lessa do Nascimento" class="team-photo">
+                    <p><strong>Nome:</strong> Tássio Lessa do Nascimento</p>
+                    <p><strong>Setor SUAP:</strong> COPEIN/AP</p>
+                    <p><strong>E-mail do Setor:</strong> <a href="mailto:copein.ap@ifrn.edu.br"><i class="fas fa-envelope"></i> copein.ap@ifrn.edu.br</a></p>
+                    <p><strong>E-mail Pessoal:</strong> <a href="mailto:tassio.lessa@ifrn.edu.br"><i class="fas fa-envelope"></i> tassio.lessa@ifrn.edu.br</a></p><p><strong>Telefone:</strong> <a href="tel:+55849998256223"><i class="fas fa-phone-alt"></i> (84) 99825-6223</a></p>
+                    <p><strong>WhatsApp:</strong> <a href="https://wa.me/5584998256223"><i class="fab fa-whatsapp"></i> (84) 99825-6223</a></p>
+                </section>
+
+        <!-- Chefe de Gabinete -->
+        <section class="team-member search-item" data-name="Antonia Elainne Sousa Marinho" data-sector="GABIN/AP">
+            <h2>Chefe de Gabinete</h2>
+            <img src="img/elainne.jpg" alt="Antonia Elainne Sousa Marinho" class="team-photo">
+            <p><strong>Nome:</strong> Antonia Elainne Sousa Marinho</p>
+            <p><strong>Setor SUAP:</strong> GABIN/AP</p>
+            <p><strong>E-mail do Setor:</strong> <a href="mailto:gabin.ap@ifrn.edu.br"><i class="fas fa-envelope"></i> gabin.ap@ifrn.edu.br</a></p>
+            <p><strong>E-mail Pessoal:</strong> <a href="mailto:elainne.marinho@ifrn.edu.br"><i class="fas fa-envelope"></i> elainne.marinho@ifrn.edu.br</a></p>
+            <p><strong>Telefone:</strong> <a href="tel:+55845584999202838"><i class="fas fa-phone-alt"></i> (84) 99920-2838</a></p>
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/5584999202838"><i class="fab fa-whatsapp"></i> (84) 99920-2838</a></p>
+        </section>
+
+        <!-- Secretário Acadêmico -->
+        <section class="team-member search-item" data-name="Cristiano Morais da Silva" data-sector="SEAC/AP">
+            <h2>Secretário Acadêmico</h2>
+            <img src="img/cristiano.jpg" alt="Cristiano Morais da Silva" class="team-photo">
+            <p><strong>Nome:</strong> Cristiano Morais da Silva</p>
+            <p><strong>Setor SUAP:</strong> SEAC/AP</p>
+            <p><strong>E-mail do Setor:</strong> <a href="mailto:seac.ap@ifrn.edu.br"><i class="fas fa-envelope"></i> seac.ap@ifrn.edu.br</a></p>
+            <p><strong>E-mail Pessoal:</strong> <a href="mailto:cristiano.morais@ifrn.edu.br"><i class="fas fa-envelope"></i> cristiano.morais@ifrn.edu.br</a></p>
+            <p><strong>Telefone:</strong> <a href="tel:+558488144403"><i class="fas fa-phone-alt"></i> (84) 98814-4403</a></p>
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/5584988144403"><i class="fab fa-whatsapp"></i> (84) 98814-4403</a></p>
+        </section>
+
+        <!-- Coordenadora de Atividades Estudantis -->
+        <section class="team-member search-item" data-name="Rilza Souza de Gois Costa" data-sector="COAES/AP">
+            <h2>Coordenadora de Atividades Estudantis</h2>
+            <img src="img/rilza.jpg" alt="Rilza Souza de Gois Costa" class="team-photo">
+            <p><strong>Nome:</strong> Rilza Souza de Gois Costa</p>
+            <p><strong>Setor SUAP:</strong> COAES/AP</p>
+            <p><strong>E-mail do Setor:</strong> <a href="mailto:coaes.ap@ifrn.edu.br"><i class="fas fa-envelope"></i> coaes.ap@ifrn.edu.br</a></p>
+            <p><strong>E-mail Pessoal:</strong> <a href="mailto:rilza.gois@ifrn.edu.br"><i class="fas fa-envelope"></i> rilza.gois@ifrn.edu.br</a></p>
+            <p><strong>Telefone:</strong> <a href="tel:+5584996374544"><i class="fas fa-phone-alt"></i> (84) 99637-4544</a></p>
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/5584996374544"><i class="fab fa-whatsapp"></i> (84) 99637-4544</a></p>
+        </section>
+
+        <!-- Coordenador de Finanças e Contratos-->
+        <section class="team-member search-item" data-name="Samuel Fernandes Dantas de Souza" data-sector="COFINC/AP">
+            <h2>Coordenador de Finanças e Contratos</h2>
+            <img src="img/samuel.jpg" alt="Samuel Fernandes Dantas de Souza" class="team-photo">
+            <p><strong>Nome:</strong> Samuel Fernandes Dantas de Souza</p>
+            <p><strong>Setor SUAP:</strong> COFINC/AP</p>
+            <p><strong>E-mail do Setor:</strong> <a href="mailto:xxx.ap@ifrn.edu.br"><i class="fas fa-envelope"></i> xxx.ap@ifrn.edu.br</a></p>
+            <p><strong>E-mail Pessoal:</strong> <a href="mailto:samuel.dantas@ifrn.edu.br"><i class="fas fa-envelope"></i> samuel.dantas@ifrn.edu.br</a></p>
+            <p><strong>Telefone:</strong> <a href="tel:+558496147575"><i class="fas fa-phone-alt"></i> (84) 99614-7575</a></p>
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/5584996147575"><i class="fab fa-whatsapp"></i> (84) 99614-7575</a></p>
+        </section>
+
+        <!-- Coordenador de Apoio Acadêmico-->
+        <section class="team-member search-item" data-name="Luis Benjamim de Moura Junior" data-sector="COAPAC/AP">
+            <h2>Coordenador de Apoio Acadêmico</h2>
+            <img src="img/benjamim.jpg" alt="Luis Benjamim de Moura Junior" class="team-photo">
+            <p><strong>Nome:</strong> Luis Benjamim de Moura Junior</p>
+            <p><strong>Setor SUAP:</strong> COAPAC/AP</p>
+            <p><strong>E-mail do Setor:</strong> <a href="mailto:coapac.ap@ifrn.edu.br"><i class="fas fa-envelope"></i> coapac.ap@ifrn.edu.br</a></p>
+            <p><strong>E-mail Pessoal:</strong> <a href="mailto:benjamim.junior@ifrn.edu.br"><i class="fas fa-envelope"></i> benjamim.junior@ifrn.edu.br</a></p>
+            <p><strong>Telefone:</strong> <a href="tel:+5584999850866"><i class="fas fa-phone-alt"></i> (84) 99985-0866</a></p>
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/5584999850866"><i class="fab fa-whatsapp"></i> (84) 99985-0866</a></p>
+        </section>
+
+        <!-- Coordenador de Gestão de Pessoas-->
+        <section class="team-member search-item" data-name="Thiago Fernando de Araujo Silva" data-sector="COGPE/AP">
+            <h2>Coordenador de Gestão de Pessoas</h2>
+            <img src="img/thiago.jpg" alt="Thiago Fernando de Araujo Silva" class="team-photo">
+            <p><strong>Nome:</strong> Thiago Fernando de Araujo Silva</p>
+            <p><strong>Setor SUAP:</strong> COGPE/AP</p>
+            <p><strong>E-mail do Setor:</strong> <a href="mailto:cogpe.ap@ifrn.edu.br"><i class="fas fa-envelope"></i> cogpe.ap@ifrn.edu.br</a></p>
+            <p><strong>E-mail Pessoal:</strong> <a href="mailto:    thiago.silva@ifrn.edu.br"><i class="fas fa-envelope"></i>     thiago.silva@ifrn.edu.br</a></p>
+            <p><strong>Telefone:</strong> <a href="tel:+5584XXXXXXXXX"><i class="fas fa-phone-alt"></i> (84) 9XXXX-XXXX</a></p>
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/55849XXXXXXXX"><i class="fab fa-whatsapp"></i> (84) 9XXXX-XXXX</a></p>
+        </section>
+
+        <!-- Coordenador de Serviços Gerais e Manutenção -->
+        <section class="team-member search-item" data-name="Rozendilson Lucena Oliveira" data-sector="COSGEM/AP">
+            <h2>Coordenador de Serviços Gerais e Manutenção</h2>
+            <img src="img/rozendilson.jpg" alt="Rozendilson Lucena Oliveira" class="team-photo">
+            <p><strong>Nome:</strong>  Rozendilson Lucena Oliveira</p>
+            <p><strong>Setor SUAP:</strong> COSGEM/AP</p>
+            <p><strong>E-mail do Setor:</strong> <a href="mailto:cosgem.ap@ifrn.edu.br"><i class="fas fa-envelope"></i> cosgem.ap@ifrn.edu.br</a></p>
+            <p><strong>E-mail Pessoal:</strong> <a href="mailto:rozendilson.lucena@ifrn.edu.br"><i class="fas fa-envelope"></i> rozedilson.lucena@ifrn.edu.br</a></p>
+            <p><strong>Telefone:</strong> <a href="tel:+5584998581872"><i class="fas fa-phone-alt"></i> (84) 99858-1872</a></p>
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/5584998581872"><i class="fab fa-whatsapp"></i> (84) 99858-1872</a></p>
+        </section>
+
+        <!-- Coordenador de Almoxarifado e Patrimônio -->
+        <section class="team-member search-item" data-name="Julio Cesar da Silva Medeiros" data-sector="COMPAT/AP">
+            <h2>Coordenador de Almoxarifado e Patrimônio</h2>
+            <img src="img/julio.jpg" alt="Julio Cesar da Silva Medeiros" class="team-photo">
+            <p><strong>Nome:</strong> Júlio Cesar da Silva Medeiros</p>
+            <p><strong>Setor SUAP:</strong> COMPAT/AP</p>
+            <p><strong>E-mail do Setor:</strong> <a href="mailto:compat.ap@ifrn.edu.br"><i class="fas fa-envelope"></i> compat.ap@ifrn.edu.br</a></p>
+            <p><strong>E-mail Pessoal:</strong> <a href="mailto:julio.medeiros@ifrn.edu.br"><i class="fas fa-envelope"></i> julio.medeiros@ifrn.edu.br</a></p>
+            <p><strong>Telefone:</strong> <a href="tel:+5584991519157"><i class="fas fa-phone-alt"></i> (84) 99151-9157</a></p>
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/5584991519157"><i class="fab fa-whatsapp"></i> (84) 99151-9157</a></p>
+        </section>
+
+        <!-- Coordenadoria de Comunicação Social e Eventos -->
+        <section class="team-member search-item" data-name="Annapaullinna da Silva Costa Lima" data-sector="COCSEV/AP">
+            <h2>Coordenadora de Comunicação Social e Eventos</h2>
+            <img src="img/annapaullinna.jpg" alt="Annapaullinna da Silva Costa Lima" class="team-photo">
+            <p><strong>Nome:</strong> Annapaullinna da Silva Costa Lima</p>
+            <p><strong>Setor SUAP:</strong> COAES/AP</p>
+            <p><strong>E-mail do Setor:</strong> <a href="mailto:cossev.ap@ifrn.edu.br"><i class="fas fa-envelope"></i> cocsev.ap@ifrn.edu.br</a></p>
+            <p><strong>E-mail Pessoal:</strong> <a href="mailto:    annapaullinna.silva@ifrn.edu.br"><i class="fas fa-envelope"></i>     annapaullinna.silva@ifrn.edu.br</a></p>
+            <p><strong>Telefone:</strong> <a href="tel:+5584991037369"><i class="fas fa-phone-alt"></i> (84) 99103-7369</a></p>
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/5584991037369"><i class="fab fa-whatsapp"></i> (84) 99103-7369</a></p>
+        </section>
+        
+        <!-- Coordenador de Tecnologia da Informação -->
+        <section class="team-member search-item" data-name="Girleidson de Albuquerque Rodrigues" data-sector="CTI/AP">
+            <h2>Coordenador de Tecnologia da Informação</h2>
+            <img src="img/girleidson.jpg" alt="Girleidson de Albuquerque Rodrigues" class="team-photo">
+            <p><strong>Nome:</strong> Girleidson de Albuquerque Rodrigues</p>
+            <p><strong>Setor SUAP:</strong> CTI/AP</p>
+            <p><strong>E-mail do Setor:</strong> <a href="mailto:cti.ap@ifrn.edu.br"><i class="fas fa-envelope"></i> cti.ap@ifrn.edu.br</a></p>
+            <p><strong>E-mail Pessoal:</strong> <a href="mailto:girleidson.rodrigues@ifrn.edu.br"><i class="fas fa-envelope"></i> girleidson.rodrigues@ifrn.edu.br</a></p>
+            <p><strong>Telefone:</strong> <a href="tel:+5584991540327"><i class="fas fa-phone-alt"></i> (84) 99154-0327</a></p>
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/5584991540327"><i class="fab fa-whatsapp"></i> (84) 99154-0327</a></p>
+        </section>
+ 
+        <!-- Coordenador de Laboratórios -->
+        <section class="team-member search-item" data-name="Wicliton Wagner de Oliveira Lima" data-sector="COLAB/AP">
+            <h2>Coordenador de Laboratórios</h2>
+            <img src="img/Wicliton.jpg" alt="Wicliton Wagner de Oliveira Lima" class="team-photo">
+            <p><strong>Nome:</strong> Wicliton Wagner de Oliveira Lima</p>
+            <p><strong>Setor SUAP:</strong> COLAB/AP</p>
+            <p><strong>E-mail do Setor:</strong> <a href="mailto:colab.ap@ifrn.edu.br"><i class="fas fa-envelope"></i> colab.ap@ifrn.edu.br</a></p>
+            <p><strong>E-mail Pessoal:</strong> <a href="mailto:wicliton.wagner@ifrn.edu.br"><i class="fas fa-envelope"></i> wicliton.wagner@ifrn.edu.br</a></p>
+            <p><strong>Telefone:</strong> <a href="tel:+558496627273"><i class="fas fa-phone-alt"></i> (84) 99662-7273</a></p>
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/5584996627273"><i class="fab fa-whatsapp"></i> (84) 99662-7273</a></p>
+        </section>
+
+        <!-- Coordenador Técnico do Laboratório de Física -->
+        <section class="team-member search-item" data-name="Francisco de Assis Sousa" data-sector="COTELABFIS/AP">
+            <h2>Coordenador do Laboratório de Física</h2>
+            <img src="img/assis.jpg" alt="Francisco de Assis Sousa" class="team-photo">
+            <p><strong>Nome:</strong> Francisco de Assis Sousa</p>
+            <p><strong>Setor SUAP:</strong> COTELABFIS/AP</p>
+            <p><strong>E-mail do Setor:</strong> <a href="mailto:colab.ap@ifrn.edu.br"><i class="fas fa-envelope"></i> colab.ap@ifrn.edu.br</a></p>
+            <p><strong>E-mail Pessoal:</strong> <a href="mailto:assis.sousa@ifrn.edu.br"><i class="fas fa-envelope"></i> assis.sousa@ifrn.edu.br</a></p>
+            <p><strong>Telefone:</strong> <a href="tel:+558496627273"><i class="fas fa-phone-alt"></i> (84) 99662-7273</a></p>
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/5584996627273"><i class="fab fa-whatsapp"></i> (84) 99662-7273</a></p>
+        </section>
+
+        <!-- Coordenadora de Esportes -->
+        <section class="team-member search-item" data-name="Jane Mery Nunes da Costa Lima" data-sector="COESP/AP">
+            <h2>Coordenadora de Esportes</h2>
+            <img src="img/jane.jpg" alt="Jane Mery Nunes da Costa Lima" class="team-photo">
+            <p><strong>Nome:</strong> Jane Mery Nunes da Costa Lima</p>
+            <p><strong>Setor SUAP:</strong> COESP/AP</p>
+            <p><strong>E-mail do Setor:</strong> <a href="mailto:xxx@ifrn.edu.br"><i class="fas fa-envelope"></i> xxx@ifrn.edu.br</a></p>
+            <p><strong>E-mail Pessoal:</strong> <a href="mailto:jane.lima@ifrn.edu.br"><i class="fas fa-envelope"></i> jane.lima@ifrn.edu.br</a></p>
+            <p><strong>Telefone:</strong> <a href="tel:+558496627273"><i class="fas fa-phone-alt"></i> (84) 99662-7273</a></p>
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/5584996627273"><i class="fab fa-whatsapp"></i> (84) 99662-7273</a></p>
+        </section>
+
+        <!-- Assessora de Relações Internacionais -->
+        <section class="team-member search-item" data-name="Luiza Helena Praxedes Fernandes" data-sector="ASERI/AP">
+            <h2>Assessora de Relações Internacionais</h2>
+            <img src="img/helena.jpg" alt="Luiza Helena Praxedes Fernandes" class="team-photo">
+            <p><strong>Nome:</strong> Luiza Helena Praxedes Fernandes</p>
+            <p><strong>Setor SUAP:</strong> XXX/AP</p>
+            <p><strong>E-mail do Setor:</strong> <a href="mailto: xxx.ap@ifrn.edu.br"><i class="fas fa-envelope"></i> xxx.ap@ifrn.edu.br</a></p>
+            <p><strong>E-mail Pessoal:</strong> <a href="mailto:    luiza.praxedes@ifrn.edu.br"><i class="fas fa-envelope"></i>     luiza.praxedes@ifrn.edu.br</a></p>
+            <p><strong>Telefone:</strong> <a href="tel:+5584991178855"><i class="fas fa-phone-alt"></i> (84) 99117-8855</a></p>
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/5584991178855"><i class="fab fa-whatsapp"></i> (84) 99117-8855</a></p>
+        </section>
+
+        <!-- Assessora de biblioteca -->
+        <section class="team-member search-item" data-name="Isabelle Brandão Mamede Galvão" data-sector="ASBIB/AP">
+            <h2>Assessora de Biblioteca</h2>
+            <img src="img/isabelle.jpg" alt="Isabelle Brandão Mamede Galvão" class="team-photo">
+            <p><strong>Nome:</strong> Isabelle Brandão Mamede Galvão</p>
+            <p><strong>Setor SUAP:</strong> ASBIB/AP</p>
+            <p><strong>E-mail do Setor:</strong> <a href="mailto:asbib.ap@ifrn.edu.br"><i class="fas fa-envelope"></i> asbib.ap@ifrn.edu.br</a></p>
+            <p><strong>E-mail Pessoal:</strong> <a href="mailto:    isabelle.mamede@ifrn.edu.br"><i class="fas fa-envelope"></i>     isabelle.mamede@ifrn.edu.br</a></p>
+            <p><strong>Telefone:</strong> <a href="tel:+5584999116709"><i class="fas fa-phone-alt"></i> (84) 99911-6709</a></p>
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/5584999116709"><i class="fab fa-whatsapp"></i> (84) 99911-6709</a></p>
+        </section>
+
+        <!-- NEABI -->
+        <section class="team-member search-item" data-name="Aline Patricia da Silva" data-sector="NEABI/AP">
+            <h2 class="letramenor">Coordenadora do Núcleo de Estudos Afro-Brasileiros e Indígenas </h2>
+            <img src="img/aline.jpg" alt="Aline Patricia da Silva" class="team-photo">
+            <p><strong>Nome:</strong> Aline Patricia da Silva</p>
+            <p><strong>Setor SUAP:</strong> NEABI/AP</p>
+            <p><strong>E-mail do Setor:</strong> <a href="mailto:neabi.ap@ifrn.edu.br"><i class="fas fa-envelope"></i> neabi.ap@ifrn.edu.br</a></p>
+            <p><strong>E-mail Pessoal:</strong> <a href="mailto: aline.silva@ifrn.edu.br"><i class="fas fa-envelope"></i> aline.silva@ifrn.edu.br</a></p>
+            <p><strong>Telefone:</strong> <a href="tel:+5584991317037"><i class="fas fa-phone-alt"></i> (84) 99131-7037</a></p>
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/5584991317037"><i class="fab fa-whatsapp"></i> (84) 99131-7037</a></p>
+        </section>
+
+        <!-- NAPNE -->
+        <section class="team-member search-item" data-name="Jaylton Edney Maia de Sousa" data-sector="NAPNE/AP">
+            <h2 class="letramenor">Coordenador do Núcleo de Atendimento às Pessoas com N. E. E. </h2>
+            <img src="img/jaylton.jpg" alt="Jaylton Edney Maia de Sousa" class="team-photo">
+            <p><strong>Nome:</strong> Jaylton Edney Maia de Sousa</p>
+            <p><strong>Setor SUAP:</strong> NAPNE/AP</p>
+            <p><strong>E-mail do Setor:</strong> <a href="mailto:napne.ap@ifrn.edu.br"><i class="fas fa-envelope"></i> napne.ap@ifrn.edu.br</a></p>
+            <p><strong>E-mail Pessoal:</strong> <a href="mailto: jaylton.sousa@ifrn.edu.br"><i class="fas fa-envelope"></i> jaylton.sousa@ifrn.edu.br</a></p>
+            <p><strong>Telefone:</strong> <a href="tel:+5584981427010"><i class="fas fa-phone-alt"></i> (84) 98142-7010</a></p>
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/5584981427010"><i class="fab fa-whatsapp"></i> (84) 98142-7010</a></p>
+        </section>
+
+        <!-- Coordenadora da especialização -->
+        <section class="team-member search-item" data-name="Danielle Lobo Montenegro" data-sector="CECINAM/AP">
+            <h2 class="letramenor">Coordenadora do Curso de Especialização em E. de Ciências Naturais e Matemática</h2>
+            <img src="img/danielle.jpg" alt="Danielle Lobo Montenegro" class="team-photo">
+            <p><strong>Nome:</strong> Danielle Lobo Montenegro</p>
+            <p><strong>Setor SUAP:</strong> CECINAM/AP</p>
+            <p><strong>E-mail do Setor:</strong> <a href="mailto:cecinam.ap@ifrn.edu.br"><i class="fas fa-envelope"></i> cecinam.ap@ifrn.edu.br</a></p>
+            <p><strong>E-mail Pessoal:</strong> <a href="mailto:    lobo.montenegro@ifrn.edu.br"><i class="fas fa-envelope"></i>     logo.montenegro@ifrn.edu.br</a></p>
+            <p><strong>Telefone:</strong> <a href="tel:+5584991479035"><i class="fas fa-phone-alt"></i> (84) 99147-9035</a></p>
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/5584991479035"><i class="fab fa-whatsapp"></i> (84) 99147-9035</a></p>
+        </section>
+
+        <!-- Coordenador do Curso de Agropecuária -->
+        <section class="team-member search-item" data-name="Renato da Cunha Gomes" data-sector="COAGRO/AP">
+            <h2>Coordenador do Curso Técnico em Agropecuária</h2>
+            <img src="img/renato.jpg" alt="Renato da Cunha Gomes" class="team-photo">
+            <p><strong>Nome:</strong> Renato da Cunha Gomes</p>
+            <p><strong>Setor SUAP:</strong> COAGRO/AP</p>
+            <p><strong>E-mail do Setor:</strong> <a href="mailto:xxx@ifrn.edu.br"><i class="fas fa-envelope"></i> xxx@ifrn.edu.br</a></p>
+            <p><strong>E-mail Pessoal:</strong> <a href="mailto:    renato.cunha@ifrn.edu.br"><i class="fas fa-envelope"></i>     renato.cunha@ifrn.edu.br</a></p>
+            <p><strong>Telefone:</strong> <a href="tel:+5584997063575"><i class="fas fa-phone-alt"></i> (84) 99706-3575</a></p>
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/558499706-3575"><i class="fab fa-whatsapp"></i> (84) 99706-3575</a></p>
+        </section>
+
+        <!-- Coordenador do Curso de Informática -->
+        <section class="team-member search-item" data-name="Samuel de Paiva Rego" data-sector="COINFO/AP">
+            <h2>Coordenador do Curso Técnico em Informática</h2>
+            <img src="img/samuelrego.jpg" alt="Samuel de Paiva Rego" class="team-photo">
+            <p><strong>Nome:</strong> Samuel de Paiva Rego</p>
+            <p><strong>Setor SUAP:</strong> COINFO/AP</p>
+            <p><strong>E-mail do Setor:</strong> <a href="mailto:xxx@ifrn.edu.br"><i class="fas fa-envelope"></i> xxx@ifrn.edu.br</a></p>
+            <p><strong>E-mail Pessoal:</strong> <a href="mailto:    samuel.rego@ifrn.edu.br"><i class="fas fa-envelope"></i>     samuel.rego@ifrn.edu.br</a></p>
+            <p><strong>Telefone:</strong> <a href="tel:+5584999299894"><i class="fas fa-phone-alt"></i> (84) 99929-9894</a></p>
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/558499929-9894"><i class="fab fa-whatsapp"></i> (84) 99929-9894</a></p>
+        </section>
+
+        <!-- Coordenador do Curso de Química -->
+        <section class="team-member search-item" data-name="Francisco Alexis Dantas Maia" data-sector="COTEQ/AP">
+            <h2>Coordenador do Curso Técnico em Química</h2>
+            <img src="img/alexis.jpg" alt="Francisco Alexis Dantas Maia" class="team-photo">
+            <p><strong>Nome:</strong> Francisco Aléxis Dantas Maia</p>
+            <p><strong>Setor SUAP:</strong> COTEQ/AP</p>
+            <p><strong>E-mail do Setor:</strong> <a href="mailto:xxx@ifrn.edu.br"><i class="fas fa-envelope"></i> xxx@ifrn.edu.br</a></p>
+            <p><strong>E-mail Pessoal:</strong> <a href="mailto:    alexis.maia@ifrn.edu.br"><i class="fas fa-envelope"></i>     alexis.maia@ifrn.edu.br</a></p>
+            <p><strong>Telefone:</strong> <a href="tel:+5584991019429"><i class="fas fa-phone-alt"></i> (84) 99101-9429</a></p>
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/5584991019429"><i class="fab fa-whatsapp"></i> (84) 99101-9429</a></p>
+        </section>
+
+        <!-- Coordenador do Curso de Manutenção e Suporte em Informática -->
+        <section class="team-member search-item" data-name="Jackson da Cruz Costa" data-sector="CTMSI/AP">
+            <h2 class="letramenor">Coordenador do Curso Técnico em Manutenção e Suporte em Informática</h2>
+            <img src="img/jackson.jpg" alt="Jackson da Cruz Costa" class="team-photo">
+            <p><strong>Nome:</strong> Jackson da Cruz Costa</p>
+            <p><strong>Setor SUAP:</strong> CTMSI/AP</p>
+            <p><strong>E-mail do Setor:</strong> <a href="mailto:xxx@ifrn.edu.br"><i class="fas fa-envelope"></i> xxx@ifrn.edu.br</a></p>
+            <p><strong>E-mail Pessoal:</strong> <a href="mailto:    jackson.costa@ifrn.edu.br"><i class="fas fa-envelope"></i>     jackson.costa@ifrn.edu.br</a></p>
+            <p><strong>Telefone:</strong> <a href="tel:+5584991037369"><i class="fas fa-phone-alt"></i> (84) 98809-3869</a></p>
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/5584991037369"><i class="fab fa-whatsapp"></i> (84) 98809-3869</a></p>
+        </section>
+
+        <!-- Coordenador da Licenciatura em Química -->
+        <section class="team-member search-item" data-name="Márcio Cleivo de Morais Souza" data-sector="COLIQ/AP">
+            <h2>Coordenador da Licenciatura em Química</h2>
+            <img src="img/marcio.jpg" alt="Márcio Cleivo de Morais Souza" class="team-photo">
+            <p><strong>Nome:</strong> Márcio Cleivo de Morais Souza</p>
+            <p><strong>Setor SUAP:</strong> COLIQ/AP</p>
+            <p><strong>E-mail do Setor:</strong> <a href="mailto:xxx@ifrn.edu.br"><i class="fas fa-envelope"></i> xxx@ifrn.edu.br</a></p>
+            <p><strong>E-mail Pessoal:</strong> <a href="mailto:    marcio.souza@ifrn.edu.br"><i class="fas fa-envelope"></i>     marcio.souza@ifrn.edu.br</a></p>
+            <p><strong>Telefone:</strong> <a href="tel:+5584991037369"><i class="fas fa-phone-alt"></i> (84) 99103-7369</a></p>
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/5584991037369"><i class="fab fa-whatsapp"></i> (84) 99103-7369</a></p>
+        </section>
+
+        <!-- Bolsista do projeto de mecanização-->
+        <section class="team-member search-item" data-name="Samuel Fernandes Dantas de Souza" data-sector="COFINC/AP">
+            <h2>Bolsista do projeto de mecanização</h2>
+            <img src="img/samuel.jpg" alt="Samuel Fernandes Dantas de Souza" class="team-photo">
+            <p><strong>Nome:</strong> Samuel Fernandes Dantas de Souza</p>
+            <p><strong>Setor SUAP:</strong>XXX</p>
+            <p><strong>E-mail do Setor:</strong> <a href="mailto:xxx@ifrn.edu.br"><i class="fas fa-envelope"></i> xxx@ifrn.edu.br</a></p>
+            <p><strong>E-mail Pessoal:</strong> <a href="mailto:samuel.dantas@ifrn.edu.br"><i class="fas fa-envelope"></i> samuel.dantas@ifrn.edu.br</a></p>
+            <p><strong>Telefone:</strong> <a href="tel:+558496147575"><i class="fas fa-phone-alt"></i> (84) 99614-7575</a></p>
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/5584996147575"><i class="fab fa-whatsapp"></i> (84) 99614-7575</a></p>
+        </section>
+
+        <!-- Bolsista do projeto de mecanização-->
+        <section class="team-member search-item" data-name="Jose Eric da Silva Queiroz " data-sector="xxx">
+            <h2>Bolsista do projeto de mecanização</h2>
+            <img src="img/eric.jpg" alt="Jose Eric da Silva Queiroz " class="team-photo">
+            <p><strong>Nome:</strong> José Eric da Silva Queiroz </p>
+            <p><strong>Setor SUAP:</strong> XXX</p>
+            <p><strong>E-mail do Setor:</strong> <a href="mailto:xxx.ap@ifrn.edu.br"><i class="fas fa-envelope"></i> xxx@ifrn.edu.br</a></p>
+            <p><strong>E-mail Pessoal:</strong> <a href="mailto:eric.queiroz@ifrn.edu.br"><i class="fas fa-envelope"></i> eric.queiroz@ifrn.edu.br</a></p>
+            <p><strong>Telefone:</strong> <a href="tel:+558499629-2229"><i class="fas fa-phone-alt"></i> (84) 99629-2229</a></p>
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/558499629-2229"><i class="fab fa-whatsapp"></i> (84) 99629-2229</a></p>
+        </section>
+
+    </main>
+
+</div>
+
+        </section>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="text-white">
+        <div class="container text-center text-md-start">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>IFRN <em>Campus</em> Apodi</h3>
+                    <p>&copy; 2024 | Todos os direitos reservados</p>
+                    <p class="r">Desenvolvido por DG/AP.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <h3>Nos siga nas redes sociais</h3>
+                    <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/ifrn.apodi/" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://portal.ifrn.edu.br/campus/apodi/" class="social-icon" target="_blank"><i class="fas fa-globe"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // JavaScript para alternar entre visualizações
+        document.querySelectorAll('.view-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const view = this.getAttribute('href').substring(1);
+                
+                if(view === "table-view") {
+                    document.getElementById('table-view').style.display = 'block';
+                    document.getElementById('visual-view').style.display = 'none';
+                } else {
+                    document.getElementById('table-view').style.display = 'none';
+                    document.getElementById('visual-view').style.display = 'block';
+                }
+            });
+        });
+
+        function filterViews() {
+            var input = document.getElementById("searchInput").value.toLowerCase();
+            var tableRows = document.querySelectorAll("#table-view .search-item");
+            var visualItems = document.querySelectorAll("#visual-view .search-item");
+
+            // Filtragem da Tabela
+            tableRows.forEach(function(row) {
+                var name = row.getAttribute("data-name").toLowerCase();
+                var sector = row.getAttribute("data-sector").toLowerCase();
+                if (name.includes(input) || sector.includes(input)) {
+                    row.style.display = "";
+                } else {
+                    row.style.display = "none";
+                }
+            });
+
+            // Filtragem da Visualização
+            visualItems.forEach(function(item) {
+                var name = item.getAttribute("data-name").toLowerCase();
+                var sector = item.getAttribute("data-sector").toLowerCase();
+                if (name.includes(input) || sector.includes(input)) {
+                    item.style.display = "";
+                } else {
+                    item.style.display = "none";
+                }
+            });
+        }
+
+        
+    </script>
+</body>
+</html>
