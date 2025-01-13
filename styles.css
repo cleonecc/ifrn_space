@@ -1,3 +1,6 @@
+
+
+
 /* Reset básico */
 * {
     margin: 0;
@@ -5,12 +8,26 @@
     box-sizing: border-box;
 }
 
+
+
+label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+
 /* Estilo geral */
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     background-color: #f8f9fa;
     padding-top: 80px;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
@@ -40,6 +57,7 @@ a:hover {
     max-width: 1330px; 
     margin: 0 auto; 
     padding: 0 15px; 
+    flex: 1;
 }
 
 /* Navbar */
@@ -69,42 +87,72 @@ a:hover {
     border-radius: 5px;
 }
 
-/* Estilo dos parceiros */
-/* Estilo dos parceiros */
-.partners-section {
-    padding: 60px 0;
-    background-color: #f1f1f1;
-}
 
 .partner-card {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 12px; /* Bordas mais arredondadas */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra mais suave */
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave de sombra e movimento */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     height: 100%;
-    margin: 10px; /* Espaçamento entre os cards */
+    margin: 15px;
+    justify-content: center;
+    align-items: center;
 }
 
 .partner-card:hover {
-    transform: translateY(-10px);
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.partner-logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    border: 2px solid #219D01;
+    padding: 5px;
+    background-color: #f9f9f9;
 }
 
 .partner-card h4 {
     font-size: 1.5rem;
     color: #343a40;
-    margin-bottom: 15px;
+    font-weight: 600;
+    margin-bottom: 10px;
 }
 
 .partner-card p {
     font-size: 1rem;
-    color: #555;
-    margin-bottom: auto;
+    color: #666;
+    margin-bottom: 10px;
+    line-height: 1.6;
 }
+
+.partner-card img {
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.partner-card img:hover {
+    transform: scale(1.1);
+}
+
+/* Estilo para o foco dos cartões */
+.partner-card:focus {
+    outline: 3px solid #219D01; /* Aumenta a visibilidade do foco */
+    box-shadow: 0 0 10px rgba(33, 157, 1, 0.5); /* Dá um brilho suave ao foco */
+}
+
 
 /* Responsividade */
 @media (max-width: 768px) {
@@ -131,6 +179,10 @@ a:hover {
     .form-container h2 {
         font-size: 22px;
     }
+
+    .google-calendar iframe {
+        height: 400px;
+    }
 }
 
 /* Rodapé */
@@ -138,6 +190,10 @@ footer {
     background-color: #343a40;
     color: #fff;
     padding: 40px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
 }
 
 footer h3 {
@@ -166,17 +222,27 @@ table {
     border-collapse: collapse;
     margin-top: 20px;
     margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 table th, table td {
     border: 1px solid #ddd;
-    padding: 10px;
+    padding: 12px;
     text-align: center;
+    vertical-align: middle;
+    font-size: 15px;
 }
 
 table th {
     background-color: #219D01;
     color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 table tr:nth-child(even) {
@@ -185,37 +251,38 @@ table tr:nth-child(even) {
 
 table tr:hover {
     background-color: #f1f1f1;
+    cursor: pointer;
 }
 
-/* Ícones */
-.fas {
-    margin-right: 10px;
+table td {
+    color: #333;
 }
 
-/* Links de alternância */
-.view-options {
-    margin: 20px 0;
-    text-align: center;
+table td.status {
+    font-weight: bold;
+    color: #219D01;
 }
 
-.view-link {
-    font-size: 18px;
+table td.status.EmAndamento {
+    color: #ff8c00;
+}
+
+table td.status.Concluído {
+    color: #28a745;
+}
+
+table td.status.Pendente {
+    color: #dc3545;
+}
+
+table td a {
     text-decoration: none;
-    color: #007BFF;
-    margin: 0 15px;
-    padding: 10px 20px;
-    border-radius: 5px;
-    background-color: #f1f1f1;
-    transition: background-color 0.3s, color 0.3s;
+    color: #007bff;
+    transition: color 0.3s;
 }
 
-.view-link:hover {
-    background-color: #007BFF;
-    color: white;
-}
-
-.view-link i {
-    margin-right: 8px;
+table td a:hover {
+    color: #0056b3;
 }
 
 /* Formulários */
@@ -254,8 +321,8 @@ table tr:hover {
 .form-container button {
     width: 100%;
     padding: 15px;
-    background-color: #219D01;
-    color: white;
+    background-color: #ffd700;
+    color: black;
     border: none;
     border-radius: 8px;
     font-size: 18px;
@@ -264,10 +331,10 @@ table tr:hover {
 }
 
 .form-container button:hover {
-    background-color: #01C929;
+    background-color: #EEAD2D;
 }
 
-/* Sucesso */
+/* Mensagens de sucesso */
 .success-message {
     color: green;
     font-size: 16px;
@@ -275,11 +342,183 @@ table tr:hover {
     display: none;
 }
 
-.r{
-    margin-top: -10px;
+.fixed-textarea {
+    width: 300px;
+    height: 150px;
+    resize: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Estilo da mensagem de boas-vindas */
+.welcome-message {
+    background-color: #ffd700;
+    color: #333;
+    padding: 40px;
+    text-align: center;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 900px;
+}
+
+.welcome-message h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.welcome-message p {
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+
+.welcome-message strong {
+    color: #343a40;
+}
+
+/* Barra de pesquisa */
+.search-bar input {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    font-size: 16px;
+    background-color: #fff;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.search-bar input:focus {
+    background-color: #f8f9fa;
+    border-color: #219D01;
+    box-shadow: 0 0 5px rgba(33, 157, 1, 0.5);
+}
+
+/* Google Calendar */
+.google-calendar {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.google-calendar iframe {
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    height: 500px;
+}
+
+/* Animações */
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.animate-slide {
+    animation: slideIn 0.5s ease-out;
+}
+
+.r{
+    margin-top: -10px ;
+}
+
+/* Contêiner para iframe responsivo */
+.responsive-iframe-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* Proporção 16:9 */
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Ajustes gerais para responsividade */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+        padding: 15px;
+    }
+
+    .google-calendar iframe {
+        height: 300px; /* Altura reduzida para telas menores */
+    }
+
+    footer h3 {
+        font-size: 1.2rem;
+    }
+
+    .social-icon {
+        font-size: 1.5rem;
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-brand {
+        font-size: 1.4rem;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 0.9rem;
+    }
+
+    .google-calendar iframe {
+        height: 250px;
+    }
+}
+
+
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+            padding-top: 80px;
+        }
+
+        /* Estilo da Navbar */
+        .navbar-brand {
+            font-size: 1.8rem;
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff;
+            font-size: 1.1rem;
+            padding: 10px 15px;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ffd700;
+            background-color: rgba(255, 215, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        /* Estilo da mensagem de boas-vindas */
         .welcome-message {
             background-color: #ffd700;
             color: #333;
@@ -304,23 +543,429 @@ table tr:hover {
             color: #343a40;
         }
 
+        /* Estilo do rodapé */
+        footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 40px 0;
+        }
+
+        footer h3 {
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        .social-icon {
+            font-size: 2rem;
+            color: #ffd700;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icon:hover {
+            color: #e6b800;
+        }
 
 
-/* Barra de pesquisa */
+.search-bar-container {
+    display: flex;
+    justify-content: flex-end; /* Alinha o conteúdo ao lado direito */
+    padding: 10px; /* Opcional, para adicionar espaço ao redor */
+}
+
 .search-bar input {
-    width: 100%;
+    width: 100%; /* Altere para um valor menor, como 200px */
+    max-width: 600px;
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 15px;
     font-size: 16px;
     background-color: #fff;
     transition: background-color 0.3s ease;
+
 }
 
 .search-bar input:focus {
     background-color: #f8f9fa;
     border-color: #219D01;
+    box-shadow: 0 0 5px rgba(33, 157, 1, 0.5); /* Adiciona um brilho */
+    max-width: 650px; /* Um leve aumento no foco */
+}
+
+/* Estilo do botão hambúrguer */
+        .navbar-toggler {
+            border: none;
+            background: transparent;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            cursor: pointer;
+        }
+
+        /* Linhas do botão */
+        .navbar-toggler .line {
+            position: absolute;
+            width: 30px;
+            height: 4px;
+            background-color: #fff;
+            border-radius: 2px;
+            transition: transform 0.4s ease, opacity 0.4s ease;
+        }
+
+        .navbar-toggler .line:nth-child(1) {
+            top: 12px;
+        }
+
+        .navbar-toggler .line:nth-child(2) {
+            top: 20px;
+        }
+
+        .navbar-toggler .line:nth-child(3) {
+            top: 28px;
+        }
+
+        /* Transformação ao clicar */
+        .navbar-toggler.active .line:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .navbar-toggler.active .line:nth-child(2) {
+            opacity: 0;
+        }
+
+        .navbar-toggler.active .line:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        /* Ajustes para responsividade */
+        @media (max-width: 768px) {
+            .navbar-toggler {
+                width: 40px;
+                height: 40px;
+            }
+
+            .navbar-toggler .line {
+                width: 25px;
+                height: 3px;
+            }
+
+            .navbar-toggler .line:nth-child(1) {
+                top: 10px;
+            }
+
+            .navbar-toggler .line:nth-child(2) {
+                top: 17px;
+            }
+
+            .navbar-toggler .line:nth-child(3) {
+                top: 24px;
+            }
+        }
+
+        /* Estilo do botão hambúrguer */
+        .navbar-toggler {
+            border: none;
+            background: transparent;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            cursor: pointer;
+        }
+
+        /* Linhas do botão */
+        .navbar-toggler .line {
+            position: absolute;
+            width: 30px;
+            height: 4px;
+            background-color: #fff;
+            border-radius: 2px;
+            transition: transform 0.4s ease, opacity 0.4s ease;
+        }
+
+        .navbar-toggler .line:nth-child(1) {
+            top: 12px;
+        }
+
+        .navbar-toggler .line:nth-child(2) {
+            top: 20px;
+        }
+
+        .navbar-toggler .line:nth-child(3) {
+            top: 28px;
+        }
+
+        /* Transformação ao clicar */
+        .navbar-toggler.active .line:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .navbar-toggler.active .line:nth-child(2) {
+            opacity: 0;
+        }
+
+        .navbar-toggler.active .line:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        /* Animação do menu ao abrir */
+        .collapse.show {
+            animation: slideDown 0.4s ease-in-out;
+        }
+
+        .collapse {
+            animation: slideUp 0.4s ease-in-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Destacar o item ativo no menu */
+        .navbar-nav .nav-item.active .nav-link {
+            background-color: #555; /* Cor de fundo quando ativo */
+            color: #fff; /* Cor do texto quando ativo */
+            border-radius: 4px; /* Bordas arredondadas */
+        }
+
+        .navbar-nav .nav-item .nav-link:hover {
+            background-color: #444; /* Efeito de hover */
+        }
+
+        
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+
+/* Estilo geral */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+    padding-top: 80px;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    text-align: center; 
+    color: #ffffff;  
+    background-color: #219D01;  
+    padding: 20px;  
+    font-size: 2.5rem;  
+    border-radius: 10px;  
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);  
+    margin-top: 20px;  
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);  
+    letter-spacing: 2px;
+}
+
+a {
+    color: #004d40;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Contêiner */
+.container {
+    max-width: 1330px; 
+    margin: 0 auto; 
+    padding: 0 15px; 
+    flex: 1;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #343a40;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    color: #ffd700;
+    font-weight: bold;
+}
+
+.navbar-toggler-icon {
+    background-color: #2F2F2F;
+}
+
+.navbar-nav .nav-link {
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 10px 15px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffd700;
+    background-color: rgba(255, 215, 0, 0.1);
+    border-radius: 5px;
+}
+
+/* Estilo dos parceiros */
+.partners-section {
+    padding: 60px 0;
+    background-color: #f1f1f1;
+}
+
+.partner-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    margin: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.partner-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.partner-logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    border: 2px solid #219D01;
+    padding: 5px;
+    background-color: #f9f9f9;
+}
+
+.partner-card h4 {
+    font-size: 1.5rem;
+    color: #343a40;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.partner-card p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.partner-card img {
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.partner-card img:hover {
+    transform: scale(1.1);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .navbar-nav .nav-link {
+        font-size: 1rem;
+    }
+
+    .partner-card {
+        padding: 20px;
+    }
+
+    .partner-card h4 {
+        font-size: 1.2rem;
+    }
+
+    .partner-card p {
+        font-size: 0.9rem;
+    }
+
+    .form-container {
+        padding: 20px;
+    }
+
+    .form-container h2 {
+        font-size: 22px;
+    }
+
+    .google-calendar iframe {
+        height: 400px;
+    }
+}
+
+/* Rodapé */
+footer {
+    background-color: #343a40;
+    color: #fff;
+    padding: 40px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+footer h3 {
+    color: #ffd700;
+    font-weight: bold;
+}
+
+.social-links {
+    margin-top: 15px;
+}
+
+.social-icon {
+    font-size: 2rem;
+    color: #ffd700;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #e6b800;
 }
 
 /* Tabela */
@@ -334,26 +979,17 @@ table {
     overflow: hidden;
 }
 
-table thead {
-    background-color: black;  /* Cor de fundo do cabeçalho */
-    color: white;               /* Cor do texto do cabeçalho */
-}
-
-table thead th {
-    text-align: center;         /* Centraliza o texto dentro das células do cabeçalho */
-    padding: 12px;              /* Espaçamento interno nas células do cabeçalho */
-}
-
 table th, table td {
     border: 1px solid #ddd;
-    padding: 12px 20px;
-    text-align: left;
+    padding: 12px;
+    text-align: center;
     vertical-align: middle;
-    font-size: 16px;
+    font-size: 15px;
 }
 
-
 table th {
+    background-color: #219D01;
+    color: white;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: bold;
@@ -365,10 +1001,6 @@ table tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-table tr:nth-child(odd) {
-    background-color: #ffffff;
-}
-
 table tr:hover {
     background-color: #f1f1f1;
     cursor: pointer;
@@ -376,10 +1008,6 @@ table tr:hover {
 
 table td {
     color: #333;
-}
-
-table td.align-left {
-    text-align: left;
 }
 
 table td.status {
@@ -409,30 +1037,492 @@ table td a:hover {
     color: #0056b3;
 }
 
-/* Centralização das colunas */
-table th, table td {
-    text-align: center;  /* Centraliza todo o conteúdo da tabela */
+/* Formulários */
+.form-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-table td.align-left {
-    text-align: left;  /* Alinha à esquerda as células que contêm textos longos, como 'Ação planejada/executada' */
+.form-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 26px;
 }
 
-table td.status, table td.perido, table td.setor {
-    text-align: center;  /* Centraliza as colunas 'Setor responsável', 'Período' e 'Status' */
+.form-container input, .form-container select, .form-container textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
 }
 
+.form-container input:focus, .form-container textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+}
 
+.form-container button {
+    width: 100%;
+    padding: 15px;
+    background-color: #ffd700;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
+.form-container button:hover {
+    background-color: #EEAD2D;
+}
 
-/* Responsividade */
+/* Mensagens de sucesso */
+.success-message {
+    color: green;
+    font-size: 16px;
+    margin-top: 15px;
+    display: none;
+}
+
+.fixed-textarea {
+    width: 300px;
+    height: 150px;
+    resize: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo da mensagem de boas-vindas */
+.welcome-message {
+    background-color: #ffd700;
+    color: #333;
+    padding: 40px;
+    text-align: center;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 900px;
+}
+
+.welcome-message h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.welcome-message p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.welcome-message strong {
+    color: #343a40;
+}
+
+/* Barra de pesquisa */
+.search-bar input {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    font-size: 16px;
+    background-color: #fff;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.search-bar input:focus {
+    background-color: #f8f9fa;
+    border-color: #219D01;
+    box-shadow: 0 0 5px rgba(33, 157, 1, 0.5);
+}
+
+/* Google Calendar */
+.google-calendar {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.google-calendar iframe {
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    height: 500px;
+}
+
+/* Animações */
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.animate-slide {
+    animation: slideIn 0.5s ease-out;
+}
+
+.r{
+    margin-top: -10px ;
+}
+
+/* Contêiner para iframe responsivo */
+.responsive-iframe-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* Proporção 16:9 */
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Ajustes gerais para responsividade */
 @media (max-width: 768px) {
-    .search-bar input {
-        font-size: 14px;
+    h1 {
+        font-size: 1.8rem;
+        padding: 15px;
     }
 
-    table th, table td {
-        font-size: 0.9rem;
-        padding: 8px;
+    .google-calendar iframe {
+        height: 300px; /* Altura reduzida para telas menores */
+    }
+
+    footer h3 {
+        font-size: 1.2rem;
+    }
+
+    .social-icon {
+        font-size: 1.5rem;
+        margin: 0 10px;
     }
 }
+
+@media (max-width: 576px) {
+    .navbar-brand {
+        font-size: 1.4rem;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 0.9rem;
+    }
+
+    .google-calendar iframe {
+        height: 250px;
+    }
+}
+
+/* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+            padding-top: 80px;
+        }
+
+        /* Estilo da Navbar */
+        .navbar-brand {
+            font-size: 1.8rem;
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff;
+            font-size: 1.1rem;
+            padding: 10px 15px;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ffd700;
+            background-color: rgba(255, 215, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        /* Estilo da mensagem de boas-vindas */
+        .welcome-message {
+            background-color: #ffd700;
+            color: #333;
+            padding: 40px;
+            text-align: center;
+            border-radius: 8px;
+            margin: 20px auto;
+            max-width: 900px;
+        }
+
+        .welcome-message h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .welcome-message p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .welcome-message strong {
+            color: #343a40;
+        }
+
+        /* Estilo do rodapé */
+        footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 40px 0;
+        }
+
+        footer h3 {
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        .social-icon {
+            font-size: 2rem;
+            color: #ffd700;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icon:hover {
+            color: #e6b800;
+        }
+
+
+.search-bar-container {
+    display: flex;
+    justify-content: flex-end; /* Alinha o conteúdo ao lado direito */
+    padding: 10px; /* Opcional, para adicionar espaço ao redor */
+}
+
+.search-bar input {
+    width: 100%; /* Altere para um valor menor, como 200px */
+    max-width: 600px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    font-size: 16px;
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+
+}
+
+.search-bar input:focus {
+    background-color: #f8f9fa;
+    border-color: #219D01;
+    box-shadow: 0 0 5px rgba(33, 157, 1, 0.5); /* Adiciona um brilho */
+    max-width: 650px; /* Um leve aumento no foco */
+}
+
+/* Container dos cards (Flexbox para garantir a altura uniforme) */
+.row {
+    display: flex;
+    flex-wrap: wrap; /* Faz com que os cards se alinhem para novas linhas quando necessário */
+}
+
+/* Estilo para o card */
+.card {
+    border: 1px solid #ddd; /* Borda discreta */
+    border-radius: 12px; /* Bordas arredondadas */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transição suave */
+    min-height: 350px; /* Altura mínima do card */
+    display: flex; /* Usando flexbox para alinhar o conteúdo internamente */
+    flex-direction: column; /* Alinha o conteúdo verticalmente */
+}
+
+/* Garante que todos os cards tenham a mesma altura */
+.card-body {
+    flex-grow: 1; /* Faz com que o corpo do card ocupe o restante do espaço disponível */
+}
+
+/* Efeito de aumento no card ao passar o mouse */
+.card:hover {
+    transform: translateY(-5px); /* Desloca o card para cima */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); /* Sombra mais intensa ao passar o mouse */
+}
+
+/* Estilo para a imagem circular */
+.card-img-top {
+    width: 120px; /* Tamanho fixo da imagem */
+    height: 120px; /* Mantém a altura igual à largura para formato circular */
+    object-fit: cover; /* Ajuste sem distorção */
+    border-radius: 50%; /* Torna a imagem redonda */
+    margin: 0 auto; /* Centraliza a imagem */
+    transition: transform 0.3s ease; /* Transição suave para o efeito de zoom */
+}
+
+/* Efeito de zoom ao passar o mouse sobre a imagem */
+.card-img-container:hover .card-img-top {
+    transform: scale(1.1); /* Aumenta a imagem para o zoom */
+}
+
+/* Título do card */
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 15px;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+/* Cor do título ao passar o mouse */
+.card:hover .card-title {
+    color: #007bff; /* Mudança de cor ao passar o mouse */
+}
+
+/* Estilo dos links (e-mail e WhatsApp) */
+.card-body a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease; /* Transição suave */
+}
+
+.card-body a:hover {
+    color: #0056b3; /* Mudança de cor ao passar o mouse */
+}
+
+/* Texto do card */
+.card-body p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* Ajuste de responsividade */
+@media (max-width: 768px) {
+    .card-img-top {
+        width: 100px;
+        height: 100px; /* Ajuste o tamanho da imagem para telas menores */
+    }
+
+    .card-body {
+        padding: 15px;
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+    }
+}
+
+/* Contêiner da imagem com padding */
+.card-img-container {
+    padding: 30px; /* Espaço entre a borda do card e a imagem */
+    text-align: center; /* Centraliza a imagem */
+}
+
+
+body {
+            font-family: 'Poppins', sans-serif;
+            margin-top: 80px;
+        }
+
+        .navbar {
+            background-color: #004d40;
+        }
+
+        .navbar-brand {
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+
+        .navbar-nav .nav-link {
+            color: #ffffff !important;
+            font-weight: 500;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ffeb3b !important;
+        }
+
+        .navbar-toggler-icon {
+            background-color: #ffffff;
+        }
+
+        .welcome-message {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 50px;
+        }
+
+        .welcome-message h2 {
+            color: #004d40;
+            font-size: 2.4rem;
+        }
+
+        .welcome-message p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: #004d40;
+            color: white;
+            padding: 40px 0;
+        }
+
+        footer .social-icon {
+            font-size: 1.8rem;
+            margin: 0 10px;
+            color: white;
+        }
+
+        footer .social-icon:hover {
+            color: #ffeb3b;
+        }
+
+        footer h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .navbar-nav {
+                text-align: center;
+            }
+
+            footer .row {
+                text-align: center;
+            }
+
+            .welcome-message {
+                padding: 30px;
+            }
+        }
